@@ -80,6 +80,7 @@ export const register = ({ username, password, email }) => (dispatch) => {
         type: REGISTER_SUCCESS,
         payload: res.data,
       });
+      console.log("here is prob")
     })
     .catch((err) => {
       dispatch(returnErrors(err.response.data, err.response.status));

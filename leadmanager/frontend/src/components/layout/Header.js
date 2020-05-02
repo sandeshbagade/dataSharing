@@ -3,66 +3,62 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { RootRef } from '@material-ui/core';
+const classes = {
+  appbar:{
 
+    zIndex:"1400"
+  }
+}
 export class Header extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
     logout: PropTypes.func.isRequired,
   };
-
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
     const authLinks = (
-      <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ''}</strong>
-        </span>
-        <li className="nav-item">
-          <button onClick={this.props.logout} className="nav-link btn btn-info btn-sm text-light">
-            Logout
-          </button>
-        </li>
-      </ul>
+          <div>
+            <span>
+              <strong>{user ? `Welcome ${user.username}` : ''}</strong>
+            </span>
+            <Button variant="outlined" color="secondary" style={{color:"#fff",marginLeft:"20px"}} onClick={this.props.logout}>
+                Logout
+            </Button>
+          </div>
     );
 
     const guestLinks = (
-      <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li className="nav-item">
-          <Link to="/register" className="nav-link">
+      <div>
+          <Link to="/register" style={{textDecoration:"none",color:"#fff"}}>
+          <Button style={{color:"#fff"}}>
             Register
+          </Button>
           </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/login" className="nav-link">
+          <Link to="/login">
+          <Button style={{color:"#fff"}}>
             Login
+          </Button>  
           </Link>
-        </li>
-      </ul>
+      </div>
     );
 
-    return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
-        <div className="container">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
-              Lead Manager
-            </a>
-          </div>
-          {isAuthenticated ? authLinks : guestLinks}
-        </div>
-      </nav>
+    return ( <div >
+              <AppBar style={{ position: "relative",zIndex:"1201"}}>
+                <Toolbar>
+                  <Typography variant="h6" style={{ flexGrow: 1,}}>
+                        EEG Database
+                  </Typography>
+                  {isAuthenticated ? authLinks : guestLinks}
+                </Toolbar>
+              </AppBar>
+            </div>         
     );
   }
 }

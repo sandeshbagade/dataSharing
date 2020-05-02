@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lead_manager_forked',
-        'USER': 'root',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',     
+        'PORT': 5432,
     }
 }
 

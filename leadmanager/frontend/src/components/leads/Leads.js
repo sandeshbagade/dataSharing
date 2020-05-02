@@ -17,14 +17,14 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Leads</h2>
+        <h2>Avaliable Datasets</h2>
         <table className="table table-striped">
           <thead>
             <tr>
               <th>ID</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Message</th>
+              <th>EEG Data File</th>
               <th />
             </tr>
           </thead>
