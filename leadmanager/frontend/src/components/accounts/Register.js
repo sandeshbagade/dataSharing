@@ -16,13 +16,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 export class Register extends Component {
   state = {
     username: '',
     email: '',
     password: '',
     password2: '',
+    first_name:2
   };
 
   static propTypes = {
@@ -32,7 +34,7 @@ export class Register extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { username, email, password, password2 } = this.state;
+    const { username, email, password, password2 , first_name} = this.state;
     if (password !== password2) {
       this.props.createMessage({ passwordNotMatch: 'Passwords do not match' });
     } else {
@@ -40,6 +42,7 @@ export class Register extends Component {
         username,
         password,
         email,
+        first_name
       };
       this.props.register(newUser);
     }
@@ -53,7 +56,7 @@ export class Register extends Component {
     }
     const { username, email, password, password2 } = this.state;
     return (
-         <Container component="main" maxWidth="xs">
+         <Container component="main" maxWidth="xs"><br/><br/><br/>
           <CssBaseline />
           <div style={{ display: 'flex',flexDirection: 'column',alignItems: 'center',}}>
             <br/>
@@ -79,7 +82,6 @@ export class Register extends Component {
             name="username"
             autoComplete="text"
             autoFocus
-            value={username}
             onChange={this.onChange}
             type="text"
           />
@@ -92,9 +94,7 @@ export class Register extends Component {
             label="Email Address"
             name="email"
             autoComplete="email"
-            autoFocus
             onChange={this.onChange}
-            value={email}
             type="email"
           />
 
@@ -110,7 +110,6 @@ export class Register extends Component {
             autoComplete="current-password"
             name="password"
             onChange={this.onChange}
-            value={password}
           />
           <TextField
             variant="outlined"
@@ -124,12 +123,22 @@ export class Register extends Component {
             autoComplete="current-password"
             name="password2"
             onChange={this.onChange}
-            value={password2}
           />
-            <FormControlLabel
+          <Select
+            name="first_name"
+            onChange={this.onChange}
+            value={this.state.first_name}
+            fullWidth
+            style={{margin:"15px 0"}}
+          >
+              <MenuItem value={0}>Admin</MenuItem>
+              <MenuItem value={1}>Contributor</MenuItem>
+              <MenuItem value={2}>Researcher/Student/Other</MenuItem>
+          </Select>
+            {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
             type="submit"
             fullWidth

@@ -9,33 +9,42 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
   <div>
+     <Link to="/" style={{ textDecoration: 'none',color:"inherit" }}>
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Home" />
     </ListItem>
-    {/* <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItem> */}
+    </Link>
+    <Link to="/new-data" style={{ textDecoration: 'none',color:"inherit" }}>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Users" />
+      <ListItemText primary="Add new data" />
     </ListItem>
+    </Link>
+    
+    <a target="_blank" href="/eeg-viewer" style={{textDecoration:"none",color:"inherit"}}>
     <ListItem button>
+      <ListItemIcon>
+      <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="EEG Viewer" />
+    </ListItem>
+    </a>
+   
+    {/* <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Reports" />
-    </ListItem>
+    </ListItem> */}
     {/* <ListItem button>
       <ListItemIcon>
         <LayersIcon />
@@ -64,7 +73,7 @@ export const secondaryListItems = (
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Year-end" />
     </ListItem>
   </div>
 );

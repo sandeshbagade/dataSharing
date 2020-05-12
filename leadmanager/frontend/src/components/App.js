@@ -21,6 +21,9 @@ import { loadUser } from '../actions/auth';
 const alertOptions = {
   timeout: 3000,
   position: 'top center',
+  containerStyle:{
+    zIndex:"1204"
+  }
 };
 
 class App extends Component {
@@ -39,6 +42,7 @@ class App extends Component {
               <div className="container">
                 <Switch>
                   <PrivateRoute exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/new-data" component={Dashboard} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                 </Switch>

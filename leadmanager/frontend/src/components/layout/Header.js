@@ -50,7 +50,7 @@ export class Header extends Component {
     );
 
     return ( <div >
-              <AppBar style={{ position: "relative",zIndex:"1201"}}>
+              <AppBar style={{ position: "fixed",zIndex:"1201",left:0,top:0}}>
                 <Toolbar>
                   <Typography variant="h6" style={{ flexGrow: 1,}}>
                         EEG Database

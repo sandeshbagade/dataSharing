@@ -20,6 +20,7 @@ export const loadUser = () => (dispatch, getState) => {
   axios
     .get('/api/auth/user', tokenConfig(getState))
     .then((res) => {
+      console.log(res.data)
       dispatch({
         type: USER_LOADED,
         payload: res.data,
@@ -48,6 +49,7 @@ export const login = (username, password) => (dispatch) => {
   axios
     .post('/api/auth/login', body, config)
     .then((res) => {
+      console.log(res)
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,
@@ -62,16 +64,15 @@ export const login = (username, password) => (dispatch) => {
 };
 
 // REGISTER USER
-export const register = ({ username, password, email }) => (dispatch) => {
+export const register = ({ username, password, email ,first_name}) => (dispatch) => {
   // Headers
   const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
-
   // Request Body
-  const body = JSON.stringify({ username, email, password });
+  const body = JSON.stringify({ username, email, password ,first_name});
 
   axios
     .post('/api/auth/register', body, config)
@@ -80,7 +81,6 @@ export const register = ({ username, password, email }) => (dispatch) => {
         type: REGISTER_SUCCESS,
         payload: res.data,
       });
-      console.log("here is prob")
     })
     .catch((err) => {
       dispatch(returnErrors(err.response.data, err.response.status));
@@ -113,7 +113,26 @@ export const tokenConfig = (getState) => {
   // Headers
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      "enctype": "multipart/form-data"
+    },
+  };
+
+  // If token, add to headers config
+  if (token) {
+    config.headers['Authorization'] = `Token ${token}`;
+  }
+
+  return config;
+};
+
+export const tokenConfigForUpload = (getState) => {
+  // Get token from state
+  const token = getState().auth.token;
+
+  // Headers
+  const config = {
+    headers: {
+      'enctype':'multipart/form-data'
     },
   };
 

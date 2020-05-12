@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# AUTH_USER_MODEL = "accounts.UserProfile"
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'leadmanager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lead_manager_forked',
+        'NAME': 'eeg_data_manager',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',     
@@ -130,3 +130,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+

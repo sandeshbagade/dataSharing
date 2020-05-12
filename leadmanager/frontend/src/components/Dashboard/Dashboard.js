@@ -14,25 +14,18 @@ import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listitems';
+import { HashRouter as Router, Route, Switch, HashRouter, useRouteMatch ,Link } from 'react-router-dom';
 import ImageUploder from './ImageUploder'
+import { connect } from 'react-redux';
+// import Leads from '../leads/DashboardLeads'
+import Form from '../leads//Form';
+import Leads from '../leads//Leads';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const drawerWidth = 240;
 
@@ -100,8 +93,6 @@ const useStyles = makeStyles((theme) => ({
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto',
   },
   container: {
     paddingTop: theme.spacing(4),
@@ -118,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+function Dashboard(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -134,11 +125,12 @@ export default function Dashboard() {
   const toggleDrawer = (open) => (event) => {
     setState({ ...state, left: open });
   };
+  const funOnC=()=>{
+       console.log(props.user)
+  }
   return (
     <div className={classes.root}>
       <CssBaseline />
-     
-
       <main className={classes.content}>
      
         <Container maxWidth="lg" className={classes.container}>  
@@ -147,19 +139,45 @@ export default function Dashboard() {
             <br/><br/><br/><br/>
             <List>{mainListItems}</List>
             <Divider />
-            <List>{secondaryListItems}</List>
+            {/* <List>{secondaryListItems}</List> */}
         </Drawer>
           <Grid container spacing={3}>
           <Grid item xs={12} md={2} lg={2}></Grid>
-            <Grid item xs={12} md={10} lg={10} style={{textAlign:"center"}}>
-            <h2  style={{fontWeight:"bold"}}>
-                Secure Server for remote viewing and transfer of Encrypted EEG Database
+            <Grid item xs={12} md={10} lg={10} style={{textAlign:"center"}}><br/><br/>
+            <h2  style={{fontWeight:"bold"}} >
+                <span  onClick={funOnC}>Secure Server for remote viewing and transfer of Encrypted EEG Database</span>
             </h2>
-            <ImageUploder/>
-            </Grid>
-           
-           
+            </Grid> 
           </Grid>
+          <Switch>
+          <Route exact path="/">
+                <Grid container spacing={3}>
+                <Grid item xs={12} md={2} lg={2}></Grid>
+                  <Grid item xs={12} md={10} lg={10} style={{textAlign:"center"}}>
+                      <Leads/>
+                  </Grid> 
+                  <Grid item xs={12} md={2} lg={2}></Grid>
+                </Grid>
+          </Route>
+          <Route exact path="/new-data">
+          <Grid container spacing={3}>
+                <Grid item xs={12} md={4} lg={4}></Grid>
+                  <Grid item xs={12} md={6} lg={6} style={{textAlign:"center"}}>
+                      {props.user.first_name=='2'?
+                      <h2>
+                        If you want to add Dataset please &ensp; 
+                          <a target="_blank" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=sandeshbagade25@gmail.com&tf=1">
+                             Email us 
+                          </a> 
+                      </h2>:<Form history={props.history}/>
+                      }
+                  </Grid> 
+                  <Grid item xs={12} md={2} lg={2}></Grid>
+                </Grid>
+          </Route> 
+          </Switch>  
+         
+         
           <Box pt={4}>
         
           </Box>
@@ -168,3 +186,10 @@ export default function Dashboard() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
+
+
+export default  connect(mapStateToProps,{  })(Dashboard);

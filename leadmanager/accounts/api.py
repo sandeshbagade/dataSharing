@@ -3,13 +3,13 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 from django.contrib.auth.models import User
-User._meta.get_field('email')._unique = True
 
 # Register API
 class RegisterAPI(generics.GenericAPIView):
   serializer_class = RegisterSerializer
 
   def post(self, request, *args, **kwargs):
+    print (request.data)
     serializer = self.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.save()
