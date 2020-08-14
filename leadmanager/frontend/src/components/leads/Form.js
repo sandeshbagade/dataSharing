@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import { addLead } from '../../actions/leads';
 import {DropzoneArea} from 'material-ui-dropzone'
 import TextField from '@material-ui/core/TextField';
@@ -24,20 +24,21 @@ export class Form extends Component {
     });
   }
 
-  onSubmit = (e) => {
+  onSubmit = async (e) => {
     e.preventDefault();
     const { name, email, message , eeg } = this.state;
     const lead = { name, email, message , eeg};
     console.log(lead.eeg)
-    this.props.addLead(lead);
-    this.setState({
-      name: '',
-      email: '',
-      message: '',
-      eeg:null
-    });
-    location.reload()
-    //this.props.history.push("/"); 
+      await this.props.addLead(lead);
+      this.setState({
+        name: '',
+        email: '',
+        message: '',
+        eeg:null
+      });
+      // this.props.history.push("/"); 
+      
+    
   };
 
   render() {

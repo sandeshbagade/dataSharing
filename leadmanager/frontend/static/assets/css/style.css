@@ -26,7 +26,7 @@ li {
 .with-nav-tabs.panel-success .nav-tabs > li > a,
 .with-nav-tabs.panel-success .nav-tabs > li > a:hover,
 .with-nav-tabs.panel-success .nav-tabs > li > a:focus {
-    color: #3c763d;
+    color: #a57a29;
 }
 
 .with-nav-tabs.panel-success .nav-tabs > .open > a,
@@ -34,7 +34,7 @@ li {
 .with-nav-tabs.panel-success .nav-tabs > .open > a:focus,
 .with-nav-tabs.panel-success .nav-tabs > li > a:hover,
 .with-nav-tabs.panel-success .nav-tabs > li > a:focus {
-    color: #3c763d;
+    color: #a57a29;
     background-color: #d6e9c6;
     border-color: transparent;
 }
@@ -42,7 +42,7 @@ li {
 .with-nav-tabs.panel-success .nav-tabs > li.active > a,
 .with-nav-tabs.panel-success .nav-tabs > li.active > a:hover,
 .with-nav-tabs.panel-success .nav-tabs > li.active > a:focus {
-    color: #3c763d;
+    color: #a57a29;
     background-color: #fff;
     border-color: #d6e9c6;
     border-bottom-color: transparent;
@@ -54,7 +54,7 @@ li {
 }
 
 .with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > li > a {
-    color: #3c763d;
+    color: #a57a29;
 }
 
 .with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
@@ -66,13 +66,13 @@ li {
 .with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
 .with-nav-tabs.panel-success .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
     color: #fff;
-    background-color: #3c763d;
+    background-color: #a57a29;
 }
 
 body {
-    min-width: 1300px;
-    _width: expression( document.body.clientWidth > 1300 ? "1300px": "auto");
-    min-height: 700px;
+    min-width: "1300px";
+    _width: expression(document.body.clientWidth > 1300 ? "1300px": "auto");
+    min-height: "700px";
 }
 
 body,

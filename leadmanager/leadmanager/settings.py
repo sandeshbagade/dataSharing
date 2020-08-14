@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'leadmanager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'eeg_data_manager',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',     
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',     
         'PORT': 5432,
     }
 }

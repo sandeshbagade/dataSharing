@@ -14,9 +14,9 @@
       <link rel="stylesheet" type="text/css" href="{% static "assets/css/style.css" %}">
    </head>
    <body onresize="sizeChanged()">
-      <div class="container plotDivs" style="width: 100%;height: 100%;background-color:#222222;">
-         <div class=" row" style="background-color: #222222; margin-left:0px;margin-right: 0px;" >
-            <nav class="navbar navbar-inverse" style="background-color: #222222;margin-bottom: 1px; padding-bottom: 5px; padding-right: 10px;width: 1300px;margin-left: auto ;margin-right: auto; border-color: #222222">
+      <div class="container plotDivs" style="width: 100%;height: 100%;background-color:#1a0b0b;">
+         <div class=" row" style="background-color: #1a0b0b; margin-left:0px;margin-right: 0px;" >
+            <nav class="navbar navbar-inverse" style="background-color: #1a0b0b;margin-bottom: 1px; padding-bottom: 5px; padding-right: 10px;width: 1300px;margin-left: auto ;margin-right: auto; border-color: #1a0b0b">
                <div class="row" >
                   <div class="col-sm-2" >
                      <div style="color: #0275d8;font-size: 30px;font-weight: bold;padding-left: 10px;padding-top: 25px;">EDF Viewer</div>
@@ -210,17 +210,17 @@
                   </div>
             </nav>
             </div>
-            <div class=" row plotDivs showAtbegining" id="PlotContainer " style="background-color: #222222; ">
+            <div class=" row plotDivs showAtbegining" id="PlotContainer " style="background-color: #1a0b0b; ">
                <div class="FirstCol plotDivs showAtbegining">
                   <div class="row plotDivs RowOne"></div>
-                  <div class="row plotDivs RowTwo RowTwoPlot  annotaionRow"   id="AnnotaionName" style="background-color:#222222;"></div>
-                  <div class="row plotDivs RowTwo RowTwoPlot  upperTimeRow"   id="UpperTimeMarkName" style="background-color:#222222;"></div>
+                  <div class="row plotDivs RowTwo RowTwoPlot  annotaionRow"   id="AnnotaionName" style="background-color:#1a0b0b;"></div>
+                  <div class="row plotDivs RowTwo RowTwoPlot  upperTimeRow"   id="UpperTimeMarkName" style="background-color:#1a0b0b;"></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  " id="EEGchName" ></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  EKGRow" style=" border: 1px solid #5cb85c;width: 1px; background-color: #5cb85c;width: 100%;"></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  " id="EKGchName" ></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  OtherRow" style=" border: 1px solid #dba436;width: 1px;background-color:#dba436;width: 100%;" ></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  " id="OtherchName" ></div>
-                  <div class="row plotDivs RowTwo RowTwoPlot  lowerTimeMarkRow"   id="LowerTimeMarkName" style="background-color:#222222;"></div>
+                  <div class="row plotDivs RowTwo RowTwoPlot  lowerTimeMarkRow"   id="LowerTimeMarkName" style="background-color:#1a0b0b;"></div>
                </div>
                <div class="SecondCol plotDivs showAtbegining">
                   <div class="row plotDivs RowOne">
@@ -238,26 +238,26 @@
                   <div class="row plotDivs RowTwo RowTwoPlot  "   id="Otherplot"></div>
                   <div class="row plotDivs RowTwo RowTwoPlot  lowerTimeMarkRow"   id="LowerTimeMarkplot" ></div>
                </div>
-               <div class="ThirdCol  plotDivs " style="border-right:  10px solid #222222;border-bottom:   10px solid #222222;padding-right: 3px;background-color:#222222;visibility: hidden;" >
+               <div class="ThirdCol  plotDivs " style="border-right:  10px solid #1a0b0b;border-bottom:   10px solid #1a0b0b;padding-right: 3px;background-color:#1a0b0b;visibility: hidden;" >
                   <div class="row plotDivs RowOne" ></div>
-                  <div class=" row plotDivs RowTwo" id="annotaion_box" style="background-color:#222222; padding-top: 3px; width: 100%">
+                  <div class=" row plotDivs RowTwo" id="annotaion_box" style="background-color:#1a0b0b; padding-top: 3px; width: 100%">
                      <!-- annotaion table start  -->
                      <!-- annotaion header -->
-                     <div class="thead-inverse row" style=" background-color: #222222;color: #0275d8; margin: 2px; " >
+                     <div class="thead-inverse row" style=" background-color: #1a0b0b;color: #0275d8; margin: 2px; " >
                         <div id="Annotaion_Table_Head_0" class="annotaionHeader"  style="width: 250px;"><b>&emsp;Annotaion<br /></b><span class="glyphicon glyphicon glyphicon-sort" ></span></div>
                         <div id="Annotaion_Table_Head_1" class="annotaionHeader"  style="width: 90px;"><b>Clock Time</b><span class="glyphicon glyphicon glyphicon-sort" ></span></div>
                      </div>
                      <!-- annotaions actual table -->
-                     <div id="annotaionsTableScrol"  style="overflow:auto; border: 2px solid #222222; padding-right: 5px;overflow-x: hidden; margin-right: 3px;">
+                     <div id="annotaionsTableScrol"  style="overflow:auto; border: 2px solid #1a0b0b; padding-right: 5px;overflow-x: hidden; margin-right: 3px;">
                         <table class="sortable table" id="AnnotaionTable" style="margin: 0px;">
                         </table>
                      </div>
                      <!-- annotaion search -->
-                     <div class="row" style="margin: 0px; background-color: #222222;">
-                        <input type="text" id="SearchInput" name="search" onkeyup ="SearchAnnotaion()"  placeholder="Search.." style="padding-left: 5px; background-color: #222222;color: #0275d8;border-width: 0px;" autocomplete="off">
+                     <div class="row" style="margin: 0px; background-color: #1a0b0b;">
+                        <input type="text" id="SearchInput" name="search" onkeyup ="SearchAnnotaion()"  placeholder="Search.." style="padding-left: 5px; background-color: #1a0b0b;color: #0275d8;border-width: 0px;" autocomplete="off">
                      </div>
-                     <div class="row" style="margin: 0px; background-color: #222222;">
-                        <label class="btn-bs-file btn btn-lg btn-primary"  style="height: 35px;padding-top: 5px;width: 250px; font-weight: bold; font-size: 20px;color: #222222; left: 60px;background-color: #0275d8;display: none;">Import Annotaions
+                     <div class="row" style="margin: 0px; background-color: #1a0b0b;">
+                        <label class="btn-bs-file btn btn-lg btn-primary"  style="height: 35px;padding-top: 5px;width: 250px; font-weight: bold; font-size: 20px;color: #1a0b0b; left: 60px;background-color: #0275d8">Import Annotaions
                         <input type="file" id="import_annotations_from_file" accept=".edf" class="custom-file-input">
                         </label>
                      </div>
@@ -398,11 +398,11 @@
                         <div  id="montagbtngroup" style=" height: 360px; padding: 0px;width: 70px; float: left;margin: 0px; " >
                            <div class="sticky-top "  style="position: sticky; top:100px; z-index: 20;width: 70px;padding: 0px; ">
                               <div type="button" class="btn btn-info" style="margin-bottom: 30px;width: 70px;" id="EEGMontage"   data-toggle="tooltip" data-placement="bottom" title="Add selected channels to EEG tab"> EEG   <span class="glyphicon glyphicon-chevron-right"> </span> </div>
-                              <!-- <div type="button" class="btn btn-success" style="margin-bottom: 30px;width: 70px;" id="EKGMontage" data-toggle="tooltip" data-placement="bottom" title="Add selected channels to EKG tab"> EKG   <span class="glyphicon glyphicon-chevron-right"> </span> </div> -->
-                              <div type="button" class="btn btn-warning" style="margin-bottom: 75px;width: 70px;" id="OtherMontage" data-toggle="tooltip" data-placement="bottom" title="Add selected channel to other tab, you can get the value by move the cursor over the channel">Other<span class="glyphicon glyphicon-chevron-right"> </span> </div>
-                              <!-- <div class="btn btn-primary active" role="button" aria-pressed="false" style="margin-bottom: 30px;width: 70px;" id="refrential" data-toggle="tooltip" data-placement="bottom" title="allow to select one channel only">
+                              <!-- <div type="button" class="btn btn-success" style="margin-bottom: 30px;width: 70px;" id="EKGMontage" data-toggle="tooltip" data-placement="bottom" title="Add selected channels to EKG tab"> EKG   <span class="glyphicon glyphicon-chevron-right"> </span> </div>
+                              <div type="button" class="btn btn-warning" style="margin-bottom: 75px;width: 70px;" id="OtherMontage" data-toggle="tooltip" data-placement="bottom" title="Add selected channel to other tab, you can get the value by move the cursor over the channel">Other<span class="glyphicon glyphicon-chevron-right"> </span> </div> -->
+                              <div class="btn btn-primary active" role="button" aria-pressed="false" style="margin-bottom: 30px;width: 70px;" id="refrential" data-toggle="tooltip" data-placement="bottom" title="allow to select one channel only">
                                  <span class="glyphicon glyphicon-unchecked" id="refrentialspan" ></span> Value
-                              </div> -->
+                              </div>
                               <div class="btn btn-info" role="button" aria-pressed="false" style="margin-bottom: 30px;width: 70px;" id="invert" data-toggle="tooltip" data-placement="bottom" title="invert the signal of EEG channels only">
                                  <span class="glyphicon glyphicon-unchecked" id="invertspan" ></span> Invert
                               </div>
@@ -412,9 +412,9 @@
                            <div style=" border: groove #5bc0de 1px;  padding: 0px;">
                               <ul class="montageSelectedList" id="montage_EEG_list" style="padding: 2px;margin: 0px"></ul>
                            </div>
-                           <!-- <div style=" border: groove #5cb85c 1px; margin-top: 10px;padding: 0px;">
+                           <div style=" border: groove #5cb85c 1px; margin-top: 10px;padding: 0px;">
                               <ul class="montageSelectedList" id="montage_EKG_list" style="padding: 2px;margin: 0px;"></ul>
-                           </div> -->
+                           </div>
                            <div style=" border: groove #dba436 1px; margin-top: 10px; padding: 0px; ">
                               <ul class="montageSelectedList" id="montage_other_list" style="padding: 2px;margin: 0px;"></ul>
                            </div>
@@ -451,22 +451,8 @@
                         <span style="padding-left: 5px;">Yash Bansal (110116094)</span>
                      </div>
                      <br>
-                     <!-- <div class="row ">
-                        <div class="col-sm-6">
-                           <h4> Email: bxz142@case.edu </h4>
-                        </div>
-                        <div class="col-sm-6" style="padding-top: 10px;">
-                           <a rel="github"  href="https://github.com/BilalZonjy/EDFViewer"><img alt="github" style="border-width:0 height:40px;width: 60px; " src="assets/img/GitHub.png"/></a>
-                        </div>
-                     </div> -->
                      <br>
                      <br>
-                     <!-- <div class="row">
-                        <div class="col-sm-2" style="padding-top: 3px;"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="assets/img/creativecommons.png"/></a>
-                        </div>
-                        <div class="col-sm-10" > This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
-                        </div>
-                     </div> -->
                      <div class="modal-footer">
                         <div type="button" class="btn btn-primary" data-dismiss="modal">Close</div>
                      </div>

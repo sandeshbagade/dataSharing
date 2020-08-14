@@ -33,13 +33,14 @@ export const deleteLead = (id) => (dispatch, getState) => {
 
 // ADD LEAD
 export const addLead = (lead) => (dispatch, getState) => {
-  console.log(tokenConfigForUpload(getState))
+
   const token = getState().auth.token;
   const formData = new FormData();
   formData.append("name", lead.name);
   formData.append("email", lead.email);
   formData.append("message", lead.message);
   formData.append("eeg", lead.eeg);
+ 
   axios
     .post('/api/leads/', formData, {headers: { Authorization: `Token ${token}` }})
     .then((res) => {
@@ -48,6 +49,9 @@ export const addLead = (lead) => (dispatch, getState) => {
         type: ADD_LEAD,
         payload: res.data,
       });
+    })
+    .then(()=>{
+      location.reload()
     })
     .catch((err) => {
       dispatch(returnErrors(err.response.data, err.response.status))

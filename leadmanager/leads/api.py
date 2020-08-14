@@ -23,6 +23,7 @@ class LeadViewSet(viewsets.ModelViewSet):
     #     return self.request.user.leads.all()
 
     def perform_create(self, serializer):
+        print (self.request.FILES['eeg'])
         serializer.save()
     
 
