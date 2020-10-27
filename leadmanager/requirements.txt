@@ -1,7 +1,7 @@
 asgiref==3.2.7
 astroid==2.4.0
 cffi==1.14.0
-cryptography==2.9
+cryptography==3.2
 Django==3.0.5
 django-fernet-fields==0.6
 django-rest-knox==4.1.0
